@@ -11,7 +11,9 @@ RUN apk add mailx
 
 # Prepare App
 RUN mkdir /app
-COPY src/* /app
+COPY src/entrypoint.sh /app/entrypoint.sh
+COPY src/export.php /app/export.php
+COPY src/export.sh /app/export.sh
 RUN chmod +x /app/*
 
 
