@@ -20,3 +20,4 @@ RUN chmod +x /app/*
 WORKDIR /app
 USER 1000
 ENTRYPOINT ["/app/entrypoint.sh"]
+
