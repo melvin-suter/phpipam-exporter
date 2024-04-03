@@ -6,6 +6,9 @@ ENV CRON_ENABLED="true"
 ENV CRON_SCHEDULE="1 1 1 * *"
 
 
+# Install Packages
+RUN apk add mailx
+
 # Prepare App
 RUN mkdir /app
 COPY src/* /app
