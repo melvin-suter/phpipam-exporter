@@ -8,6 +8,8 @@ text="A new auto-export has been generated."
 
 cd /app
 
-php73 export.php > $file_name
-echo "$text" | mailx -s "$subject" -a "$file_name" -r "$from_mail" "$to_mail"
+php export.php > $file_name
+echo "$text" | mail -s "$subject" -a "$file_name" -r "$from_mail" "$to_mail"
 rm -f $file_name
+
+
