@@ -19,6 +19,5 @@ RUN chmod +x /app/*
 RUN export PATH="$PATH:/app"
 
 WORKDIR /app
-USER 1000
 ENTRYPOINT ["bash", "/app/entrypoint.sh"]
 
