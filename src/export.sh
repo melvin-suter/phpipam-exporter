@@ -9,7 +9,7 @@ text="A new auto-export has been generated."
 cd /app
 
 php export.php > $file_name
-echo "$text" | mail -s "$subject" -a "$file_name" -r "$from_mail" "$to_mail"
+echo "$(uuencode $file_name $file_name) $text" | mail -s "$subject" -r "$from_mail" "$to_mail"
 rm -f $file_name
 
 
