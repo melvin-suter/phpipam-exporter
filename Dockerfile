@@ -8,6 +8,7 @@ ENV CRON_SCHEDULE="1 1 1 * *"
 
 # Install Packages
 RUN apk add mailx bash
+RUN apk add --update busybox-suid
 
 # Prepare App
 RUN mkdir /app
