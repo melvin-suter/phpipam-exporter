@@ -7,7 +7,7 @@ ENV CRON_SCHEDULE="1 1 1 * *"
 
 
 # Install Packages
-RUN apk add mailx
+RUN apk add mailx bash
 
 # Prepare App
 RUN mkdir /app
@@ -15,9 +15,9 @@ COPY src/entrypoint.sh /app/entrypoint.sh
 COPY src/export.php /app/export.php
 COPY src/export.sh /app/export.sh
 RUN chmod +x /app/*
-
+RUN export PATH="$PATH:/app"
 
 WORKDIR /app
 USER 1000
-ENTRYPOINT ["/app/entrypoint.sh"]
+ENTRYPOINT ["bash", "/app/entrypoint.sh"]
 
