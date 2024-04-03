@@ -1,7 +1,7 @@
 ENV EXPORT_FROM=export@example.com
 ENV EXPORT_TO=export@example.com
 ENV CRON_ENABLED=true
-ENV CRON_SCHEDULE=1 1 1 * *
+ENV CRON_SCHEDULE="1 1 1 * *"
 
 FROM phpipam/phpipam-www:1.6x
 
